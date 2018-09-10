@@ -14,8 +14,8 @@ namespace Sheep.NPCs
 
         public override void SetDefaults()
         {
-            npc.width = 14;
-            npc.height = 35;
+            npc.width = 24;
+            npc.height = 38;
             npc.damage = 10;
             npc.defense = 7;
             npc.lifeMax = 50;
