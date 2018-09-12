@@ -48,6 +48,7 @@ namespace Sheep
         public override void TileCountsAvailable(int[] tileCounts)
         {
             World.Sheeporetiles = tileCounts[mod.TileType("SheepOreTile")];
+            
         }
         public override void Initialize()
         {

@@ -11,7 +11,8 @@ using Terraria.GameInput;
 
 namespace Sheep
 {
-    /*public class SheepNPC : GlobalNPC
+    /*
+    public class SheepNPC : GlobalNPC
     {
         public bool WooledUp = false;
 
@@ -19,5 +20,5 @@ namespace Sheep
         {
             WooledUp = false;
         }
-    }*/
+    }**/
 }

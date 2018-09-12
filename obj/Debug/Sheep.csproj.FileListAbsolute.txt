@@ -1,0 +1,2 @@
+C:\Users\backe\Documents\My Games\Terraria\ModLoader\Mod Sources\Sheep\obj\Debug\Sheep.csprojAssemblyReference.cache
+C:\Users\backe\Documents\My Games\Terraria\ModLoader\Mod Sources\Sheep\obj\Debug\Sheep.csproj.CoreCompileInputs.cache

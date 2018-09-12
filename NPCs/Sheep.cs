@@ -37,9 +37,12 @@ namespace Sheep.NPCs
             Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SheepBone"), Main.rand.Next(2, 5));
             Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Wool"), Main.rand.Next(3, 6));
         }
+        
         public override void OnHitPlayer(Player target, int damage, bool crit)
         {
-            target.AddBuff(mod.BuffType("WooledUp"), 450, true);
+            
+            target.AddBuff(mod.BuffType("WooledUp"),450, true);
+            
         }
     }
 }

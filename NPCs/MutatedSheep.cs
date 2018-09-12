@@ -32,6 +32,11 @@ namespace Sheep.NPCs
         {
             return SpawnCondition.OverworldNightMonster.Chance * 0.1f;
         }
+        public override void AI()
+        {
+            
+
+        }
         public override void NPCLoot()
         {
             Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SheepBone"), Main.rand.Next(4, 7)); //mob has chance of dropping 4-7 SheepBone
@@ -62,10 +67,10 @@ namespace Sheep.NPCs
                 Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BoneChestplate"), Main.rand.Next(0, 1)); //see above
             }
         }
-
             public override void OnHitPlayer(Player target, int damage, bool crit)
             {
                 target.AddBuff(mod.BuffType("WooledUp"), 500, true); //if player is hit, add WooledUp debuff for 500 ticks
             }
+            
     }
 }
