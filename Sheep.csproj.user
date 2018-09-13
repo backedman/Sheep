@@ -4,6 +4,7 @@
     <StartAction>Program</StartAction>
     <StartProgram>C:\Users\backe\Desktop\Terraria Backups\Terraria Modded\Terraria.exe</StartProgram>
     <StartWorkingDirectory>C:\Users\backe\Desktop\Terraria Backups\Terraria Modded\</StartWorkingDirectory>
-    <StartArguments>-eac "%24%28TargetPath%29"</StartArguments>
+    <StartArguments>
+    </StartArguments>
   </PropertyGroup>
 </Project>
