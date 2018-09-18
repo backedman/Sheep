@@ -30,8 +30,11 @@ namespace Sheep.NPCs
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SpawnCondition.OverworldDaySlime.Chance * 0.2f;
+            
+            return SheepNPC.SpawnInForest(this.npc, SpawnCondition.OverworldDaySlime.Chance * 0.2f);
         }
+
+
         public override void NPCLoot()
         {
             Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SheepBone"), Main.rand.Next(2, 5));
@@ -45,4 +48,5 @@ namespace Sheep.NPCs
             
         }
     }
+    //
 }
