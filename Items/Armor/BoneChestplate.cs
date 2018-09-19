@@ -10,27 +10,14 @@ namespace Sheep.Items.Armor
         public override void SetStaticDefaults()
         {
             Tooltip.SetDefault("The Chestplate made from the fluffiest creatures alive");
-            DisplayName.SetDefault("Bone Chestplate");
+            DisplayName.SetDefault("Wool Chestplate");
         }
         public override void SetDefaults()
         {
-            item.width = 18;
-            item.height = 18;
+            item.width = 30;
+            item.height = 20;
             item.defense = 2;
         }
-        /*
-        public static int Bonus3
-        {
-            get
-            {
-                return Bonus3;
-            }
-            set
-            {
-                Bonus3 = 1;
-            }
-        }
-        */
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);

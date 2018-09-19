@@ -1,10 +1,10 @@
-﻿using Terraria;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Sheep.NPCs
 {
-    public class Sheep : ModNPC
+    public class CorruptedSheep : ModNPC
     {
         public override void SetStaticDefaults()
         {
@@ -16,13 +16,13 @@ namespace Sheep.NPCs
         {
             npc.width = 38;
             npc.height = 20;
-            npc.damage = 1 ;
-            npc.defense = 14;
-            npc.lifeMax = 45;
+            npc.damage = 15;
+            npc.defense = 30;
+            npc.lifeMax = 25;
             npc.HitSound = SoundID.NPCHit1;
             npc.DeathSound = SoundID.NPCDeath2;
-            npc.value = 90f; //money drop
-            npc.knockBackResist = 1.0f; //kbr
+            npc.value = 110f; //money drop
+            npc.knockBackResist = 4.0f; //kbr
             npc.aiStyle = 26; //acts like unicorn
             aiType = NPCID.Unicorn; //acts like a unicorn
             animationType = 3;
@@ -31,9 +31,9 @@ namespace Sheep.NPCs
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
             if (SheepNPC.InForest(this.npc))
-                {
+            {
                 return SpawnCondition.OverworldDaySlime.Chance * 0.2f;
-                }
+            }
             else
             {
                 return 0;
@@ -43,15 +43,15 @@ namespace Sheep.NPCs
 
         public override void NPCLoot()
         {
-            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SheepBone"), Main.rand.Next(2, 5));
-            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Wool"), Main.rand.Next(3, 6));
+            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SheepBone"), Main.rand.Next(3, 6));
+            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Wool"), Main.rand.Next(4, 7));
         }
-        
+
         public override void OnHitPlayer(Player target, int damage, bool crit)
         {
-            
-            target.AddBuff(mod.BuffType("WooledUp"),450, true);
-            
+
+            target.AddBuff(mod.BuffType("WooledUp"), 250, true);
+            target.AddBuff(mod.BuffType("PurpleWooledUp"))
         }
     }
     //

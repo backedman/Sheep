@@ -10,27 +10,14 @@ namespace Sheep.Items.Armor
         public override void SetStaticDefaults()
         {
             Tooltip.SetDefault("Shoes made from the fluffiest creatures alive.");
-            DisplayName.SetDefault("Bone Greaves");
+            DisplayName.SetDefault("Wool Greaves");
         }
         public override void SetDefaults()
         {
-            item.width = 18;
+            item.width = 22;
             item.height = 18;
             item.defense = 1;
         }
-        /*
-        public static int Bonus2
-        {
-            get
-            {
-                return Bonus2;
-            }
-            set
-            {
-                Bonus2 = 1;
-            }
-        }
-        */
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);

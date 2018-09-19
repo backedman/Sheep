@@ -19,6 +19,7 @@ namespace Sheep
     {
         Random rnd = new Random();
         public bool WooledUp = false;
+        public bool PurpleWooledUp = false;
         public static bool sheepimmunity = false;
         public static bool sheephalfimmunity = false;
         public static bool sheeparmored = false;
@@ -34,6 +35,7 @@ namespace Sheep
         public override void ResetEffects()
         {
             WooledUp = false;
+            PurpleWooledUp = false;
         }
 
 
@@ -56,6 +58,14 @@ namespace Sheep
                     player.accRunSpeed = 2.0f;
                     player.jump = (int)1;
                 }
+            }
+        }
+        public override void UpdateBadLifeRegen()
+        {
+            if (PurpleWooledUp == true)
+            {
+                
+                player.lifeRegen -= 10 + (int)(player.statLifeMax / 25);
             }
         }
 

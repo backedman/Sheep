@@ -10,12 +10,12 @@ namespace Sheep.Items.Armor
         public override void SetStaticDefaults()
         {
             Tooltip.SetDefault("The helmet made from the fluffiest creature alive");
-            DisplayName.SetDefault("Bone Helmet");
+            DisplayName.SetDefault("Wool Helmet");
         }
         public override void SetDefaults()
         {
-            item.width = 18;
-            item.height = 18;
+            item.width = 22;
+            item.height = 20;
             item.defense = 1;
         }
         public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -29,19 +29,6 @@ namespace Sheep.Items.Armor
             player.buffImmune[BuffID.Frozen] = true;
             player.buffImmune[BuffID.Frostburn] = true;
         }
-        /*
-        public static int Bonus1
-        {
-            get
-            {
-                return Bonus1;
-            }
-            set
-            {
-                Bonus1 = 1;
-            }
-        }
-        */
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
