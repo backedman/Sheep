@@ -59,6 +59,7 @@
     <Compile Include="Buffs\PurpleWool%27dUp.cs" />
     <Compile Include="Buffs\RedWooledUp.cs" />
     <Compile Include="Buffs\WooledUp.cs" />
+    <Compile Include="Dusts\WooledUpDust.cs" />
     <Compile Include="Items\Armor\BoneChestplate.cs" />
     <Compile Include="Items\Armor\BoneGreaves.cs" />
     <Compile Include="Items\Armor\BoneHelmet.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="NPCs\CorruptedSheep.cs" />
     <Compile Include="NPCs\CrimsonSheep.cs" />
     <Compile Include="NPCs\CurruptedSheep.cs" />
+    <Compile Include="NPCs\DesertSheep.cs" />
     <Compile Include="NPCs\MutatedSheep.cs" />
     <Compile Include="NPCs\Sheep.cs" />
     <Compile Include="NPCs\SheepZombie.cs" />

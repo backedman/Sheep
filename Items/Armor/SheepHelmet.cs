@@ -24,7 +24,7 @@ namespace Sheep.Items.Armor
         }
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "immunity to wooled up";
+            player.setBonus = "Wooledup related debuff reduction";
             SheepPlayer.sheephalfimmunity = true;
             
         }
