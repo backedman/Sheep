@@ -26,7 +26,7 @@ namespace Sheep.Items.Armor
         {
             player.setBonus = "immunity to wooled up";
             SheepPlayer.sheephalfimmunity = true;
-            SheepPlayer.sheeparmored = true;
+            
         }
         /*
         public static int Bonus1

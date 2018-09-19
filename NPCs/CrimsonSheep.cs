@@ -14,7 +14,7 @@ using Terraria.ModLoader;
 
 namespace Sheep.NPCs
 {
-    public class CorruptedSheep : ModNPC
+    public class CrimsonSheep : ModNPC
     {
         public override void SetStaticDefaults()
         {
@@ -40,9 +40,9 @@ namespace Sheep.NPCs
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            if (spawnInfo.player.ZoneJungle)
+            if (spawnInfo.player.ZoneCrimson)
             {
-                return SpawnCondition.OverworldDaySlime.Chance * 0.2f;
+                return SpawnCondition.Crimson.Chance * 0.2f;
             }
             else
             {
@@ -59,10 +59,8 @@ namespace Sheep.NPCs
 
         public override void OnHitPlayer(Player target, int damage, bool crit)
         {
-
-            target.AddBuff(mod.BuffType("WooledUp"), 250, true);
-            target.AddBuff(mod.BuffType("PurpleWooledUp"))
+            target.AddBuff(mod.BuffType("WooledUp"), 200, true);
+            target.AddBuff(mod.BuffType("RedWooledUp"), 200, true);
         }
     }
-    //
 }

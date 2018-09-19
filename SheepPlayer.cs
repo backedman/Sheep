@@ -20,14 +20,9 @@ namespace Sheep
         Random rnd = new Random();
         public bool WooledUp = false;
         public bool PurpleWooledUp = false;
+        public bool RedWooledUp = false;
         public static bool sheepimmunity = false;
         public static bool sheephalfimmunity = false;
-        public static bool sheeparmored = false;
-        public int[] WooledUpDuration;
-        private static int WooledUpcounter;
-        public static bool check = true;
-        private float WooledUpDecay = (float)Math.Sqrt(WooledUpcounter);
-        public int[] tileXY;
 
 
 
@@ -36,6 +31,7 @@ namespace Sheep
         {
             WooledUp = false;
             PurpleWooledUp = false;
+            RedWooledUp = false;
         }
 
 
@@ -64,22 +60,15 @@ namespace Sheep
         {
             if (PurpleWooledUp == true)
             {
-                
                 player.lifeRegen -= 10 + (int)(player.statLifeMax / 25);
+            }
+            if (RedWooledUp == true)
+            {
+                player.lifeRegen -= 7 + (int)(player.statLife / 15);
             }
         }
 
-        public bool HasSheepitemCheck()
-        {
-            if (player.HasItem(mod.ItemType("Bone Pickaxe")) == true)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+
 
         //public override void PostUpdateMiscEffects()
         //{

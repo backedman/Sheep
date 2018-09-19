@@ -9,19 +9,15 @@ namespace Sheep.Buffs
         public override void SetDefaults()
         {
             DisplayName.SetDefault("Red Wool'd Up!");
-            Description.SetDefault("You are being currupted!");
+            Description.SetDefault("You are ensnared by barbed threads of wool!");
             Main.debuff[Type] = true;
             Main.pvpBuff[Type] = true;
             Main.buffNoSave[Type] = true;
             longerExpertDebuff = true;
         }
-        public override void Update(NPC npc, ref int buffIndex)
-        {
-            npc.GetGlobalNPC<SheepGlobalNPC>(mod).PurpleWooledUp = true;
-        }
         public override void Update(Player player, ref int buffIndex)
         {
-            player.GetModPlayer<SheepPlayer>(mod).PurpleWooledUp = true;
+            player.GetModPlayer<SheepPlayer>(mod).RedWooledUp = true;
         }
     }
 }

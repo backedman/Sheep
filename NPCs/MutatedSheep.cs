@@ -30,7 +30,7 @@ namespace Sheep.NPCs
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SheepNPC.SpawnInForest(this.npc, SpawnCondition.OverworldNightMonster.Chance * 0.1f); ;
+            return SpawnCondition.OverworldNightMonster.Chance * 0.1f;
         }
         public override void AI()
         {

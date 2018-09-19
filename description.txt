@@ -1,14 +1,22 @@
 Adds Sheeps into the game. More content related to sheeps will be added later.
 
-V0.03-
+
+V0.3.3
+Added Sheep Ore
+Added Sheep Ore Spawner (for worlds without sheep ore)
+Added Sheep Armor
+Added Mutated Sheep and Standing Zombie Sheep
+Buffed Debuff effects
+
+V0.3.2-
 Hired Spriter (Say hello to SomeGUI!)
 Updated Textures
 Added Bone Weapons
 Added Bone Armor (all of the textures in Bone Armor are placeholder textures)
 
-V0.02-
+V0.3.1-
 Sheeps were added.
 Sheep bone drops changed to an exclusive drop by sheeps.
 
-V0.01-
+V0.3-
 Sheep bones were added as a drop to every mob.
