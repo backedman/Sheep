@@ -56,10 +56,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Buffs\PurpleWool%27dUp.cs" />
+    <Compile Include="Buffs\DesertWooledUp.cs" />
+    <Compile Include="Buffs\PurpleWooledUp.cs" />
     <Compile Include="Buffs\RedWooledUp.cs" />
     <Compile Include="Buffs\WooledUp.cs" />
     <Compile Include="Dusts\WooledUpDust.cs" />
+    <Compile Include="Items\10gold.cs" />
     <Compile Include="Items\Armor\BoneChestplate.cs" />
     <Compile Include="Items\Armor\BoneGreaves.cs" />
     <Compile Include="Items\Armor\BoneHelmet.cs" />
@@ -68,6 +70,8 @@
     <Compile Include="Items\Armor\SheepHelmet.cs" />
     <Compile Include="Items\Axes\BoneAxe.cs" />
     <Compile Include="Items\Axes\SheepAxe.cs" />
+    <Compile Include="Items\Mutagen.cs" />
+    <Compile Include="Items\MutantGoo.cs" />
     <Compile Include="Items\Pickaxes\BonePick.cs" />
     <Compile Include="Items\Pickaxes\SheepPick.cs" />
     <Compile Include="Items\SheepOreSpawner.cs" />
@@ -78,12 +82,13 @@
     <Compile Include="NPCs\Bosses\SpedSheep\SpedSheep.cs" />
     <Compile Include="NPCs\CorruptedSheep.cs" />
     <Compile Include="NPCs\CrimsonSheep.cs" />
-    <Compile Include="NPCs\CurruptedSheep.cs" />
     <Compile Include="NPCs\DesertSheep.cs" />
+    <Compile Include="NPCs\IceSheep.cs" />
     <Compile Include="NPCs\MutatedSheep.cs" />
     <Compile Include="NPCs\Sheep.cs" />
     <Compile Include="NPCs\SheepZombie.cs" />
     <Compile Include="losthopesanddreams.cs" />
+    <Compile Include="NPCs\succubus_sheep.cs" />
     <Compile Include="Placeables\Bars\SheepBar.cs" />
     <Compile Include="Placeables\Ore\SheepOre.cs" />
     <Compile Include="Placeables\Wool.cs" />

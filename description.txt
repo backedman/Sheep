@@ -1,5 +1,12 @@
 Adds Sheeps into the game. More content related to sheeps will be added later.
 
+V0.3.5
+Bug fixes
+New Boss!
+Balance
+
+V0.3.4
+Added sheep variant for Desert, Snow, Crimson, and Corruption (each one of them has a special effect too!)
 
 V0.3.3
 Added Sheep Ore

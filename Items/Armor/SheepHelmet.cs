@@ -24,8 +24,12 @@ namespace Sheep.Items.Armor
         }
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "Wooledup related debuff reduction";
+            player.setBonus = ("Wooledup debuff effect reduction \n" +
+                               "2 Armor");
             SheepPlayer.sheephalfimmunity = true;
+            player.statDefense += 2;
+            
+           
             
         }
         /*

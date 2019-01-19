@@ -23,13 +23,13 @@ namespace Sheep.NPCs
         {
             npc.width = 38;
             npc.height = 20;
-            npc.damage = 15;
-            npc.defense = 30;
-            npc.lifeMax = 25;
+            npc.damage = 10;
+            npc.defense = 15;
+            npc.lifeMax = 45;
             npc.HitSound = SoundID.NPCHit1;
             npc.DeathSound = SoundID.NPCDeath2;
             npc.value = 110f; //money drop
-            npc.knockBackResist = 4.0f; //kbr
+            npc.knockBackResist = .3f; //kbr
             npc.aiStyle = 26; //acts like unicorn
             aiType = NPCID.Unicorn; //acts like a unicorn
             animationType = 3;
@@ -37,7 +37,7 @@ namespace Sheep.NPCs
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            if (SheepNPC.InForest(this.npc))
+            if (spawnInfo.player.ZoneCorrupt)
             {
                 return SpawnCondition.OverworldDaySlime.Chance * 0.2f;
             }
@@ -50,15 +50,21 @@ namespace Sheep.NPCs
 
         public override void NPCLoot()
         {
-            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SheepBone"), Main.rand.Next(4, 6));
-            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Wool"), Main.rand.Next(5, 7));
+            if(Main.rand.Next(0,4) >= 2)
+            {
+                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SheepBone"), Main.rand.Next(1, 4));
+            }
+            if(Main.rand.Next(0,4) >= 2)
+            {
+                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Wool"), Main.rand.Next(1, 4));
+            }
         }
 
         public override void OnHitPlayer(Player target, int damage, bool crit)
         {
 
-            target.AddBuff(mod.BuffType("WooledUp"), 250, true);
-            target.AddBuff(mod.BuffType("PurpleWooledUp"), 250, true);
+            //target.AddBuff(mod.BuffType("WooledUp"), 250, true);
+            target.AddBuff(mod.BuffType("PurpleWooledUp"), 350, true);
         }
     }
 }

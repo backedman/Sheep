@@ -15,7 +15,7 @@ namespace Sheep.Projectiles
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("SheepLaser");
+            DisplayName.SetDefault("Sheep Laser");
         }
         public override void SetDefaults()
         {
@@ -31,11 +31,9 @@ namespace Sheep.Projectiles
             projectile.light = 0.5f;
             projectile.ignoreWater = true;
             projectile.tileCollide = false;
-            projectile.extraUpdates = 1;
         }
        public override void AI()           //this make that the projectile will face the corect way
         {                                                           
-            projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;
         }
         public override void OnHitPlayer(Player target, int damage, bool crit)
         {

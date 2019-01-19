@@ -25,8 +25,12 @@ using Microsoft.Xna.Framework;
 namespace Sheep
 {
     public class SheepNPC : GlobalNPC
-    { 
+    {
+        //public bool WooledUp = false;
+        //public override bool InstancePerEntity => true;
+        public static bool WooledUp = false;
       public static bool InForest(NPC npc)
+      
         {
             Player player = Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)];
             int tileX = (int)(player.Center.X / 16f);
@@ -43,7 +47,18 @@ namespace Sheep
             
             return false;
         }
+        //public override void ResetEffects(NPC npc)
+        //{
+        //    WooledUp = false;
+        //}
+        //public override void PostAI(NPC npc)
+        //{
 
+        //    if (WooledUp)
+        //    {
+        //        npc.velocity *= 0.5f;
+        //    }
+        //}
 
     }
 }

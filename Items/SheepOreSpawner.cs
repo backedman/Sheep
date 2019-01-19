@@ -7,6 +7,7 @@ namespace Sheep.Items
 {
         public class SheepOreSpawner : ModItem
         {
+        private bool usedBefore = false;
             public override void SetStaticDefaults()
             {
                 DisplayName.SetDefault("Sheep Ore Spawner");
@@ -24,14 +25,15 @@ namespace Sheep.Items
             }
             public override bool CanUseItem(Player player)
             {
-            if (World.Sheeporetiles == 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+                if (World.Sheeporetiles == 0 && usedBefore == false) //Main.netMode != NetmodeID.MultiplayerClient)
+                {
+                    usedBefore = true;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             public override bool UseItem(Player player)
             {

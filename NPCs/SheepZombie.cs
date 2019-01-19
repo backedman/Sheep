@@ -21,7 +21,7 @@ namespace Sheep.NPCs
             npc.lifeMax = 50;
             npc.DeathSound = SoundID.NPCDeath2;
             npc.value = 60f;
-            npc.knockBackResist = 0.5f;
+            npc.knockBackResist = 0.6f;
             npc.aiStyle = 3;
             aiType = NPCID.Zombie;
             animationType = NPCID.Zombie;

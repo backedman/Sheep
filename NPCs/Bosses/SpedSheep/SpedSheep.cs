@@ -16,6 +16,7 @@ namespace Sheep.NPCs.Bosses.SpedSheep
         private Player player;
         private float speed;
         private int countdown;
+        public bool alive;
         Vector2[] playerCenter;
         public override void SetStaticDefaults()
         {
@@ -98,6 +99,7 @@ namespace Sheep.NPCs.Bosses.SpedSheep
                   player = Main.player[npc.target];
                   if (!player.active || player.dead)
                   {
+           
                       npc.velocity = new Vector2(0f, -10f);
                       if (npc.timeLeft > 10)
                       {
@@ -120,12 +122,17 @@ namespace Sheep.NPCs.Bosses.SpedSheep
             {
                 velocity = new Vector2(0f, 5f);
             }
-            Projectile.NewProjectile(npc.Center, velocity, type, npc.damage, 2f);
+            Projectile.NewProjectile(npc.Center, velocity, type, npc.damage, 2f, 255); 
             npc.ai[1] = 150f;
         }
 
         public override void AI()
         {
+            if (alive != true)
+            {
+                alive = true;
+            }
+            
             Target(); // Sets the Player Target
 
             DespawnHandler(); // Handles if the NPC should despawn.
