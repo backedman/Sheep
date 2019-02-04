@@ -83,6 +83,7 @@
     <Compile Include="NPCs\CorruptedSheep.cs" />
     <Compile Include="NPCs\CrimsonSheep.cs" />
     <Compile Include="NPCs\DesertSheep.cs" />
+    <Compile Include="NPCs\DungeonSheep.cs" />
     <Compile Include="NPCs\IceSheep.cs" />
     <Compile Include="NPCs\MutatedSheep.cs" />
     <Compile Include="NPCs\Sheep.cs" />
@@ -101,7 +102,6 @@
     <Compile Include="Tiles\WoolTileBlock.cs" />
     <Compile Include="World.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>-eac "$(TargetPath)"</PostBuildEvent>

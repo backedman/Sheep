@@ -18,6 +18,7 @@ namespace Sheep.NPCs.Bosses.SpedSheep
         private int countdown;
         public bool alive;
         Vector2[] playerCenter;
+        int[] ai2 = new int[1];
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Sped Sheep");
@@ -28,20 +29,22 @@ namespace Sheep.NPCs.Bosses.SpedSheep
         {
             npc.width = 300;
             npc.height = 225;
-            npc.damage = 50;
+            npc.damage = 30;
             npc.defense = 10;
-            npc.lifeMax = 1500;
+            npc.lifeMax = 1000;
             npc.HitSound = SoundID.NPCHit1;
             npc.DeathSound = SoundID.NPCDeath2;
-            npc.value = 90f;
-            npc.knockBackResist = 0.4f;
+            npc.value = 10000f;
+            npc.knockBackResist = -4f;
             npc.aiStyle = 26;
             animationType = 3;
+            
             npc.npcSlots = 2f; // The higher the number, the more NPC slots this NPC takes.
             npc.boss = true; // Is a boss
             npc.lavaImmune = true; // Not hurt by lava
             npc.noGravity = false; // Not affected by gravity
             npc.noTileCollide = false; // Will not collide with the tiles. 
+            
             npc.HitSound = SoundID.NPCHit1;
             npc.DeathSound = SoundID.NPCDeath1;
             music = MusicID.Boss1;
@@ -57,7 +60,7 @@ namespace Sheep.NPCs.Bosses.SpedSheep
 
         private void Move(Vector2 offset)
         {
-            speed = 10f; 
+            speed = 15f; 
             Vector2 moveTo = player.Center + offset; // Gets the point that the npc will be moving to.
             Vector2 move = moveTo - npc.Center;
             float magnitude = MagnitudeBody(move);
@@ -126,6 +129,40 @@ namespace Sheep.NPCs.Bosses.SpedSheep
             npc.ai[1] = 150f;
         }
 
+        private void Dash()
+        {
+            Vector2 velocity = new Vector2(player.position.X, player.position.Y - (Math.Abs(player.position.X - npc.position.X))) * 0.015f - npc.Center * 0.015f;
+            npc.velocity += velocity;
+            ai2[0] = 500;
+        }
+        private void jumpToGroundPound()
+        {
+            Vector2 velocity = new Vector2(player.position.X, Math.Abs(player.position.Y)) * 0.015f - npc.Center * 0.015f;
+            npc.velocity += velocity;
+        }
+        private void GroundPound()
+        {
+            countdown = 60;
+            while (countdown > 0)
+            {
+                countdown--;
+                npc.velocity = new Vector2(0, 1f);
+                if (npc.velocity == new Vector2(0, 0))
+                {
+                    Shockwave();
+                }
+            }
+            ai2[1] = 400;
+        }
+        private void Shockwave()
+        {
+            int type = mod.ProjectileType("Shockwave");
+            Vector2 velocityRight = new Vector2(1,0);// Get the distance between target and npc.
+            Vector2 velocityLeft = new Vector2(-1, 0);
+            Projectile.NewProjectile(npc.Center, velocityRight, type, npc.damage, 2f, 255);
+            Projectile.NewProjectile(npc.Center, velocityLeft, type, npc.damage, 2f, 255);
+        }
+
         public override void AI()
         {
             if (alive != true)
@@ -140,10 +177,29 @@ namespace Sheep.NPCs.Bosses.SpedSheep
             //Move(new Vector2(0, -100f)); // Calls the Move Method
             //Attacking
             npc.ai[1] -= 1f; // Subtracts 1 from the ai.
+
+            ai2[0] -= 1;
+            ai2[1] -= 1;
             if (npc.ai[1] <= 0f)
             {
                 Shoot();
             }
+            if (ai2[0] <= 0f)
+            {
+                Dash();
+            }
+            if (Main.expertMode)
+            {
+                if (ai2[1] <= 0f)
+                {
+                    jumpToGroundPound();
+                }
+                if (Math.Abs(player.position.X - npc.position.X) <= 50 && Math.Abs(player.position.Y - npc.position.Y) >= 10)
+                {
+                    GroundPound();
+                }
+            }
+
         }
         private void Target()
         {

@@ -159,7 +159,7 @@ namespace Sheep
                     }
                     else if (sheephalfimmunity)
                     {
-                        player.lifeRegen -= (int)((10 + (player.statLifeMax /25)));
+                        player.lifeRegen -= (int)(10 + (player.statLifeMax /25)) - player.statDefense / 2;
                     }
                     if (Main.rand.NextFloat() < 0.4342105f)
                     {
@@ -171,11 +171,11 @@ namespace Sheep
                     WooledUpforEverythingElse();
                     if (!(sheephalfimmunity))
                     {
-                        player.lifeRegen -= (int)  (player.statLife / 10);
+                        player.lifeRegen -= (int)  (player.statLife / 10) - player.statDefense / 2;
                     }
                     else if (sheephalfimmunity)
                     {
-                        player.lifeRegen -= (int)((3.5 + (player.statLife / 10)) * 0.5);
+                        player.lifeRegen -= (int)((3.5 + (player.statLife / 10)) * 0.5) - player.statDefense / 2;
                     }
                     if (Main.rand.NextFloat() < 0.4342105f)
                     {

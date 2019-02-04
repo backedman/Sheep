@@ -31,13 +31,15 @@ namespace Sheep.Projectiles
             projectile.light = 0.5f;
             projectile.ignoreWater = true;
             projectile.tileCollide = false;
+            
         }
        public override void AI()           //this make that the projectile will face the corect way
         {                                                           
         }
         public override void OnHitPlayer(Player target, int damage, bool crit)
         {
-            target.AddBuff(mod.BuffType("WooledUp"), 450, true);
+            //target.AddBuff(mod.BuffType("WooledUp"), 350, true);
+            target.statLife -= 30;
         }
     } 
 }

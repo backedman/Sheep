@@ -45,7 +45,7 @@ namespace Sheep.NPCs
         {
             Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SheepBone"), Main.rand.Next(4, 7)); //mob has chance of dropping 4-7 SheepBone
            
-            if(Main.rand.Next(0,10) == 2)
+            if(Main.rand.Next(0,2) == 2)
             {
                 Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MutantGoo"), 1); //mob has chance of dropping 1 Mutant Goo
             }

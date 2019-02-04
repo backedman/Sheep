@@ -17,8 +17,8 @@ namespace Sheep.NPCs
             npc.width = 38;
             npc.height = 20;
             npc.damage = 1 ;
-            npc.defense = 5;
-            npc.lifeMax = 25;
+            npc.defense = 7;
+            npc.lifeMax = 35;
             npc.HitSound = SoundID.NPCHit1;
             npc.DeathSound = SoundID.NPCDeath2;
             npc.value = 90f; //money drop

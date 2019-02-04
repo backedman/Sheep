@@ -47,7 +47,7 @@ namespace Sheep.Items
         {
             if (ItemTarget.Equals("Mutated Sheep"))
             {
-                NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType("SpedSheep"));
+                NPC.SpawnOnPlayer(player.whoAmI, mod.NPCType("Sped Sheep"));
                 return true;
             }
             return false;
