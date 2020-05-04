@@ -5,8 +5,14 @@ using Terraria.ID;
 namespace Sheep.Items.Armor
 {
     [AutoloadEquip(EquipType.Head)]
+    
     public class SheepHelmet : ModItem
     {
+        private bool armorset;
+        private Player player;
+
+   
+
         public override void SetStaticDefaults()
         {
             Tooltip.SetDefault("The helmet made from the soft material in the ground");
@@ -17,21 +23,46 @@ namespace Sheep.Items.Armor
             item.width = 18;
             item.height = 18;
             item.defense = 1;
+            
         }
         public override bool IsArmorSet(Item head, Item body, Item legs)
         {
-            return body.type == mod.ItemType("SheepChestplate") && legs.type == mod.ItemType("SheepGreaves");
+            if(body.type == mod.ItemType("SheepChestplate") && legs.type == mod.ItemType("SheepGreaves"))
+            {
+                armorset = true;               
+            }
+            else
+            {
+                FullSet(false);
+                armorset = false;
+            }
+            return armorset;
         }
         public override void UpdateArmorSet(Player player)
         {
             player.setBonus = ("Wooledup debuff effect reduction \n" +
                                "2 Armor");
-            SheepPlayer.sheephalfimmunity = true;
+            player.GetModPlayer<SheepPlayer>().sheephalfimmunity = true;
             player.statDefense += 2;
-            
-           
-            
+            {
+
+            }
         }
+        public override void UpdateEquip(Player player)
+        {
+            base.UpdateEquip(player);
+            this.player = player;
+        }
+        
+
+        
+        private void FullSet(bool b)
+        {
+            if (player != null)
+            {
+                player.GetModPlayer<SheepPlayer>().sheephalfimmunity = b;
+            }
+        }         
         /*
         public static int Bonus1
         {
@@ -54,4 +85,5 @@ namespace Sheep.Items.Armor
             recipe.AddRecipe();
         }
     }
+
 }

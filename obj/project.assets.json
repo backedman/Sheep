@@ -1,0 +1,48 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.5": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.5": []
+  },
+  "packageFolders": {
+    "C:\\Users\\backe\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\backe\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Sheep\\Sheep.csproj",
+      "projectName": "Sheep",
+      "projectPath": "C:\\Users\\backe\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Sheep\\Sheep.csproj",
+      "packagesPath": "C:\\Users\\backe\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\backe\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Sheep\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\backe\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net45"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net45": {
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net45": {
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

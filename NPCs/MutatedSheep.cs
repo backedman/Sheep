@@ -30,12 +30,7 @@ namespace Sheep.NPCs
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SpawnCondition.OverworldNightMonster.Chance * 0.1f;
-        }
-        public override void AI()
-        {
-            
-
+            return SpawnCondition.OverworldNightMonster.Chance * 0.2f;
         }
         public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
         {
@@ -43,17 +38,16 @@ namespace Sheep.NPCs
         }
         public override void NPCLoot()
         {
-            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SheepBone"), Main.rand.Next(4, 7)); //mob has chance of dropping 4-7 SheepBone
+            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SheepBone"), Main.rand.Next(2, 5)); //mob has chance of dropping 2-4 SheepBone
            
-            if(Main.rand.Next(0,2) == 2)
+            if(Main.rand.Next(0,2) == 1)
             {
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MutantGoo"), 1); //mob has chance of dropping 1 Mutant Goo
+                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("MutantGoo"), Main.rand.Next(1,2)); //mob has chance of dropping 1 Mutant Goo
             }
         }
             public override void OnHitPlayer(Player target, int damage, bool crit)
             {
-            
-                target.AddBuff(mod.BuffType("WooledUp"), 350, true); //if player is hit, add WooledUp debuff for 400 ticks
+                target.AddBuff(mod.BuffType("WooledUp"), 400, true); //if player is hit, add WooledUp debuff for 400 ticks
             }
             
     }

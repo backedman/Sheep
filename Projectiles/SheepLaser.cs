@@ -22,7 +22,7 @@ namespace Sheep.Projectiles
 
             projectile.width = 28;
             projectile.height = 28;
-            projectile.aiStyle = 1;
+            projectile.aiStyle = 0;
             projectile.friendly = false;
             projectile.hostile = true;
             projectile.ranged = true;
@@ -31,15 +31,22 @@ namespace Sheep.Projectiles
             projectile.light = 0.5f;
             projectile.ignoreWater = true;
             projectile.tileCollide = false;
+            projectile.damage = 0;
+            
             
         }
-       public override void AI()           //this make that the projectile will face the corect way
-        {                                                           
+       
+
+
+       public override void AI()           
+        {
+           
+           
         }
         public override void OnHitPlayer(Player target, int damage, bool crit)
         {
-            //target.AddBuff(mod.BuffType("WooledUp"), 350, true);
-            target.statLife -= 30;
+            target.AddBuff(mod.BuffType("WooledUp"), 120, true);
+            
         }
     } 
 }

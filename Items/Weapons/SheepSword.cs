@@ -40,7 +40,7 @@ namespace Sheep.Items.Weapons
         }
         public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
         {
-            target.AddBuff(mod.BuffType("WooledUp"), 350);
+            target.AddBuff(mod.BuffType("WooledUp"), 350, true);
         }
     }
 }

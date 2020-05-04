@@ -12,6 +12,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
+
 namespace Sheep.NPCs
 {
     public class CrimsonSheep : ModNPC
@@ -26,7 +27,7 @@ namespace Sheep.NPCs
         {
             npc.width = 38;
             npc.height = 20;
-            npc.damage = 10;
+            npc.damage = 9;
             npc.defense = 15;
             npc.lifeMax = 50;
             npc.HitSound = SoundID.NPCHit1;
@@ -53,13 +54,14 @@ namespace Sheep.NPCs
 
         public override void NPCLoot()
         {
-            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SheepBone"), Main.rand.Next(3,4));
+            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SheepBone"), Main.rand.Next(3, 4));
             Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Wool"), Main.rand.Next(2, 5));
         }
 
         public override void OnHitPlayer(Player target, int damage, bool crit)
         {
-            target.AddBuff(mod.BuffType("RedWooledUp"), 200, true);
+           
+            target.AddBuff(mod.BuffType("RedWooledUp"), target.GetModPlayer<SheepPlayer>().debufftimer(200), true);
         }
     }
 }

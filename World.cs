@@ -27,7 +27,7 @@ namespace Sheep
                 {
                     progress.Message = "Ores Being Developed";
 
-                    for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 4E-04); k++)
+                    for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 2E-04); k++)
                     {
                         WorldGen.TileRunner(
                             WorldGen.genRand.Next(0, Main.maxTilesX), // X Coord of the tile

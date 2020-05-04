@@ -19,13 +19,13 @@ namespace Sheep.Buffs
         
         public override void Update(Player player, ref int buffIndex)
         {
-            player.GetModPlayer<SheepPlayer>(mod).WooledUp = true;
+            player.GetModPlayer<SheepPlayer>().WooledUp = true;
         }
 
-        //public override void Update(NPC npc, ref int buffIndex)
-        //{
-        //    npc.GetGlobalNPC<SheepNPC>(mod).WooledUp = true;
-        //}
+        public override void Update(NPC npc, ref int buffIndex)
+        {
+            npc.GetGlobalNPC<SheepNPC>().WooledUp = true;
+        }
 
     }
 }

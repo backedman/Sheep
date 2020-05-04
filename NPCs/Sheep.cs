@@ -17,8 +17,8 @@ namespace Sheep.NPCs
             npc.width = 38;
             npc.height = 20;
             npc.damage = 1 ;
-            npc.defense = 7;
-            npc.lifeMax = 35;
+            npc.defense = 4;
+            npc.lifeMax = 30;
             npc.HitSound = SoundID.NPCHit1;
             npc.DeathSound = SoundID.NPCDeath2;
             npc.value = 90f; //money drop
@@ -27,7 +27,7 @@ namespace Sheep.NPCs
             aiType = NPCID.Unicorn; //acts like a unicorn
             animationType = 3;
             
-            npc.velocity *= 0.5f;
+            npc.velocity *= 0.4f;
           
             
         }
@@ -36,7 +36,7 @@ namespace Sheep.NPCs
         {
             if (SheepNPC.InForest(this.npc))
                 {
-                return SpawnCondition.OverworldDaySlime.Chance * 0.2f;
+                return SpawnCondition.OverworldDaySlime.Chance * 0.15f;
                 }
             else
             {
@@ -53,10 +53,8 @@ namespace Sheep.NPCs
         
         public override void OnHitPlayer(Player target, int damage, bool crit)
         {
-           
-            target.AddBuff(mod.BuffType("WooledUp"),450, true);
-            
-            
+
+            target.AddBuff(mod.BuffType("WooledUp"), 300, true);
         }
     }
     //

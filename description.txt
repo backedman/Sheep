@@ -1,4 +1,25 @@
-Adds Sheeps into the game. More content related to sheeps will be added later.
+Adds a sheep for most biomes
+New Ore, Weapons, and Armor
+New Boss!
+
+Fun addition to every modded playthrough!
+
+V1.0
+Ok made the sheep boss ACTUALLY spawneable
+Fixed sheep armor's debuff
+Major balance changes
+Fixed most bugs
+
+V0.4
+Made the boss spawnable
+Made the sheeps drop less bones
+Made Mutated Goo actually droppable
+Minor nerfs to sheep all around
+Nerfs to sheep ore spawns
+
+V0.3.6
+More Bug Fixes
+Added Textures to Mutagen and Mutated Goo
 
 V0.3.5
 Bug fixes
@@ -16,7 +37,6 @@ Added Mutated Sheep and Standing Zombie Sheep
 Buffed Debuff effects
 
 V0.3.2-
-Hired Spriter (Say hello to SomeGUI!)
 Updated Textures
 Added Bone Weapons
 Added Bone Armor (all of the textures in Bone Armor are placeholder textures)

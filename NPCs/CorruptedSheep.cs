@@ -64,7 +64,8 @@ namespace Sheep.NPCs
         {
 
             //target.AddBuff(mod.BuffType("WooledUp"), 250, true);
-            target.AddBuff(mod.BuffType("PurpleWooledUp"), 350, true);
+            
+            target.AddBuff(mod.BuffType("PurpleWooledUp"), target.GetModPlayer<SheepPlayer>().debufftimer(300), true);
         }
     }
 }

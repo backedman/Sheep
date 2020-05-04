@@ -16,7 +16,7 @@ namespace Sheep.Items.Axes
         {
             item.damage = 3;
             item.knockBack = (float)2.5;
-            item.axe = 5;
+            item.axe = 4;
             item.crit = 6;
             item.autoReuse = true;
             item.useTime = 13;

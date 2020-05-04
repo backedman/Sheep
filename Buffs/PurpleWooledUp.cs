@@ -17,7 +17,7 @@ namespace Sheep.Buffs
         }
         public override void Update(Player player, ref int buffIndex)
         {
-            player.GetModPlayer<SheepPlayer>(mod).PurpleWooledUp = true;
+            player.GetModPlayer<SheepPlayer>().PurpleWooledUp = true;
         }
     }
 }

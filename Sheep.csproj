@@ -1,109 +1,22 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\references\tModLoader.targets" />
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{486FABAE-4548-478A-85E9-4E486F4A980B}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Sheep</RootNamespace>
     <AssemblyName>Sheep</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFramework>net45</TargetFramework>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+  <Target Name="BuildMod" AfterTargets="Build">
+    <Exec Command="&quot;$(tMLBuildServerPath)&quot; -build $(ProjectDir) -eac $(TargetPath) -define $(DefineConstants) -unsafe $(AllowUnsafeBlocks)" />
+  </Target>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\XNA_Framework\Microsoft.Xna.Framework.dll</HintPath>
+    <Reference Include="Accessibility" />
+    <Reference Include="Ionic.Zip.CF">
+      <HintPath>..\..\..\..\..\..\Desktop\Terraria Backups\Terraria Modded\Ionic.Zip.CF.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\XNA_Framework\Microsoft.Xna.Framework.Game.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\XNA_Framework\Microsoft.Xna.Framework.Graphics.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xna.Framework.Xact, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\XNA_Framework\Microsoft.Xna.Framework.Xact.dll</HintPath>
-    </Reference>
-    <Reference Include="Terraria">
-      <HintPath>..\..\..\..\..\..\Desktop\Terraria Backups\Terraria Modded\Terraria.exe</HintPath>
+    <Reference Include="System.Windows.Forms">
+      <HintPath>..\..\..\..\..\..\Desktop\Terraria Backups\Terraria Modded\System.Windows.Forms.Mono.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Buffs\DesertWooledUp.cs" />
-    <Compile Include="Buffs\PurpleWooledUp.cs" />
-    <Compile Include="Buffs\RedWooledUp.cs" />
-    <Compile Include="Buffs\WooledUp.cs" />
-    <Compile Include="Dusts\WooledUpDust.cs" />
-    <Compile Include="Items\10gold.cs" />
-    <Compile Include="Items\Armor\BoneChestplate.cs" />
-    <Compile Include="Items\Armor\BoneGreaves.cs" />
-    <Compile Include="Items\Armor\BoneHelmet.cs" />
-    <Compile Include="Items\Armor\SheepChestplate.cs" />
-    <Compile Include="Items\Armor\SheepGreaves.cs" />
-    <Compile Include="Items\Armor\SheepHelmet.cs" />
-    <Compile Include="Items\Axes\BoneAxe.cs" />
-    <Compile Include="Items\Axes\SheepAxe.cs" />
-    <Compile Include="Items\Mutagen.cs" />
-    <Compile Include="Items\MutantGoo.cs" />
-    <Compile Include="Items\Pickaxes\BonePick.cs" />
-    <Compile Include="Items\Pickaxes\SheepPick.cs" />
-    <Compile Include="Items\SheepOreSpawner.cs" />
-    <Compile Include="Items\Weapons\BoneSword.cs" />
-    <Compile Include="Items\SheepBone.cs" />
-    <Compile Include="Items\Weapons\SheepSword.cs" />
-    <Compile Include="NPCs\Bosses\FatSheep\FatSheep.cs" />
-    <Compile Include="NPCs\Bosses\SpedSheep\SpedSheep.cs" />
-    <Compile Include="NPCs\CorruptedSheep.cs" />
-    <Compile Include="NPCs\CrimsonSheep.cs" />
-    <Compile Include="NPCs\DesertSheep.cs" />
-    <Compile Include="NPCs\DungeonSheep.cs" />
-    <Compile Include="NPCs\IceSheep.cs" />
-    <Compile Include="NPCs\MutatedSheep.cs" />
-    <Compile Include="NPCs\Sheep.cs" />
-    <Compile Include="NPCs\SheepZombie.cs" />
-    <Compile Include="losthopesanddreams.cs" />
-    <Compile Include="NPCs\succubus_sheep.cs" />
-    <Compile Include="Placeables\Bars\SheepBar.cs" />
-    <Compile Include="Placeables\Ore\SheepOre.cs" />
-    <Compile Include="Placeables\Wool.cs" />
-    <Compile Include="Projectiles\SheepLaser.cs" />
-    <Compile Include="Sheep.cs" />
-    <Compile Include="SheepNPC.cs" />
-    <Compile Include="SheepPlayer.cs" />
-    <Compile Include="Tiles\SheepBarTile.cs" />
-    <Compile Include="Tiles\SheepOreTile.cs" />
-    <Compile Include="Tiles\WoolTileBlock.cs" />
-    <Compile Include="World.cs" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>-eac "$(TargetPath)"</PostBuildEvent>
-  </PropertyGroup>
 </Project>
