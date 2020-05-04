@@ -63,19 +63,7 @@ namespace Sheep.Items.Armor
                 player.GetModPlayer<SheepPlayer>().sheephalfimmunity = b;
             }
         }         
-        /*
-        public static int Bonus1
-        {
-            get
-            {
-                return Bonus1;
-            }
-            set
-            {
-                Bonus1 = 1;
-            }
-        }
-        */
+      
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);

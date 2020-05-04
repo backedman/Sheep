@@ -62,8 +62,6 @@ namespace Sheep.NPCs
 
         public override void OnHitPlayer(Player target, int damage, bool crit)
         {
-
-            //target.AddBuff(mod.BuffType("WooledUp"), 250, true);
             
             target.AddBuff(mod.BuffType("PurpleWooledUp"), target.GetModPlayer<SheepPlayer>().debufftimer(300), true);
         }

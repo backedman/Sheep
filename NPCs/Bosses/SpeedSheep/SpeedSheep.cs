@@ -12,6 +12,7 @@ using Sheep.Projectiles;
 
 namespace Sheep.NPCs.Bosses.SpeedSheep
 {
+    [AutoloadBossHead]
     public class SpeedSheep : ModNPC
     {
         private Player player;
@@ -144,9 +145,9 @@ namespace Sheep.NPCs.Bosses.SpeedSheep
             {
                 gptimer = 1;
                 groundPoundCountdown = 0;
+                npc.noTileCollide = false;
                 Shockwave();
                 buffer = 120;
-                npc.noTileCollide = false;
 
                 startedJumpToPound = false;
                 if (groundPoundNumber == 3) {
@@ -174,6 +175,7 @@ namespace Sheep.NPCs.Bosses.SpeedSheep
             Projectile.NewProjectile(new Vector2(npc.position.X, npc.position.Y + npc.height - 56), velocityLeft, type, 0, 2f, 255);
         }
 
+
         public override void AI()
         {
             if (alive != true)
@@ -181,16 +183,16 @@ namespace Sheep.NPCs.Bosses.SpeedSheep
                 alive = true;
             }
 
-            //buffer--;
-            //if (buffer <= 0)
-            //{
-                Target(); // Sets the Player Target
 
-                DespawnHandler(); // Handles if the NPC should despawn.
+            Target(); // Sets the Player Target
+
+            DespawnHandler(); // Handles if the NPC should despawn.
 
             //Attacking
-            npc.ai[1] -= 1f; // Subtracts 1 from the ai.
-            ai2[0]--;
+            if (startedJumpToPound == false) { 
+                npc.ai[1] -= 1f; // Subtracts 1 from the ai.
+                ai2[0]--;
+            }
             
             if (npc.ai[1] <= 0f)
             {
@@ -236,15 +238,19 @@ namespace Sheep.NPCs.Bosses.SpeedSheep
                            
                     }
                 }
-          //  }
-            //else
-            //    npc.velocity = lastPosition;
 
         }
         public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
         {
-            npc.lifeMax = (int)(npc.lifeMax + 500 * numPlayers);
-
+            if  (numPlayers < 1)
+                numPlayers = 1;
+            npc.lifeMax = (int)( npc.lifeMax + (500 * (numPlayers - 1)));  
+        }
+        public override void NPCLoot()
+        {
+            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SheepBone"), Main.rand.Next(40, 50)); //mob has chance of dropping 40-50 Sheep Bone
+            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Wool"), Main.rand.Next(30, 40)); //mob has chance of dropping 30-40 wool
+            
         }
         private void Target()
         {

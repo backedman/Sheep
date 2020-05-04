@@ -18,19 +18,7 @@ namespace Sheep.Items.Armor
                 item.height = 18;
                 item.defense = 3;
             }
-            /*
-            public static int Bonus3
-            {
-                get
-                {
-                    return Bonus3;
-                }
-                set
-                {
-                    Bonus3 = 1;
-                }
-            }
-            */
+           
             public override void AddRecipes()
             {
                 ModRecipe recipe = new ModRecipe(mod);

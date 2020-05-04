@@ -24,7 +24,7 @@ namespace Sheep.Items.Armor
             recipe.AddIngredient(null, "SheepBone", 15);
             recipe.AddIngredient(null, "Wool", 10);
             recipe.AddTile(TileID.WorkBenches); //can be crafted on work benches
-            recipe.SetResult(this); //you need thi
+            recipe.SetResult(this); //you need this
             recipe.AddRecipe();
         }
     }
