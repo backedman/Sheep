@@ -127,7 +127,7 @@ namespace Sheep
                     }
 
 
-                    player.lifeRegen -= (int)( 5 + player.statLifeMax / 35 * ( player.buffTime[mod.BuffType("PurpleWooledUp")] / 175 ) * (50/(50+ player.statDefense)) );
+                    player.lifeRegen -= (int)( 5 + player.statLifeMax / 35 * (50/(50+ player.statDefense)) );
                     
                     if (Main.rand.NextFloat() < 0.4342105f)
                     {
@@ -141,7 +141,7 @@ namespace Sheep
                     {
                     }
 
-                    player.lifeRegen -= (int)((5 + player.statLife / 25) - (player.statDefense / 4)) * ( player.buffTime[mod.BuffType("RedWooledUp")]/100 ) * (50 / (50 + player.statDefense));
+                    player.lifeRegen -= (int)((5 + player.statLife / 25) - (player.statDefense / 4)) * (50 / (50 + player.statDefense));
                     
                     
                     if (Main.rand.NextFloat() < 0.4342105f)
